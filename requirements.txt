@@ -4,3 +4,6 @@ flask_sqlalchemy
 flask_sqlalchemy
 flask_bcrypt
 flask-login
+flask_bcrypt
+flask_bcrypt
+gunicorn

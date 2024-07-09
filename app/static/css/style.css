@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+.container {
+    padding: 2rem;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form select, form button {
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.task-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-column {
+    width: 30%;
+}
+
+.task {
+    background-color: #fff;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.alert {
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.alert.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert.danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.task {
+    background-color: #fff;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: grab;
+}
+
+.task:active {
+    cursor: grabbing;
+}
+
+.task-column {
+    width: 30%;
+    min-height: 200px;
+    border: 2px dashed #ccc;
+    padding: 1rem;
+}

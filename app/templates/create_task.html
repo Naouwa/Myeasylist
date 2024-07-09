@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}New Task{% endblock %}
+{% block content %}
+<h2>Create New Task</h2>
+<form method="POST" action="{{ url_for('new_task') }}">
+    <input type="text" name="title" placeholder="Task Title">
+    <input type="date" name="due_date" placeholder="Due Date">
+    <button type="submit">Create</button>
+</form>
+{% endblock %}

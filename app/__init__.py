@@ -1,3 +1,5 @@
+# app/__init__.py
+
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
@@ -12,12 +14,11 @@ bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 
-from . import routes
+from app import routes, models
 
-# Function to create the database
+# Function to create the database (if needed)
 def create_db():
-    with app.app_context():
-        db.create_all()
+    db.create_all()
 
 # Uncomment this if you want to create the database when the app starts
 # create_db()

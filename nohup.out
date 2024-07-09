@@ -1,0 +1,10 @@
+[2024-07-08 22:05:46 +0100] [383224] [INFO] Starting gunicorn 22.0.0
+[2024-07-08 22:05:46 +0100] [383224] [INFO] Listening at: http://127.0.0.1:8000 (383224)
+[2024-07-08 22:05:46 +0100] [383224] [INFO] Using worker: sync
+[2024-07-08 22:05:46 +0100] [383225] [INFO] Booting worker with pid: 383225
+[2024-07-08 22:05:46 +0100] [383227] [INFO] Booting worker with pid: 383227
+[2024-07-08 22:05:46 +0100] [383233] [INFO] Booting worker with pid: 383233
+[2024-07-08 22:24:36 +0100] [383227] [INFO] Parent changed, shutting down: <Worker 383227>
+[2024-07-08 22:24:36 +0100] [383227] [INFO] Worker exiting (pid: 383227)
+[2024-07-08 22:24:36 +0100] [383233] [INFO] Parent changed, shutting down: <Worker 383233>
+[2024-07-08 22:24:36 +0100] [383233] [INFO] Worker exiting (pid: 383233)

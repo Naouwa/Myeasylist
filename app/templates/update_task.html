@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Update Task{% endblock %}
+{% block content %}
+<h2>Update Task</h2>
+<form method="POST" action="{{ url_for('update_task', task_id=task.id) }}">
+    <input type="text" name="title" value="{{ task.title }}">
+    <input type="date" name="due_date" value="{{ task.due_date|date('Y-m-d') }}">
+    <select name="status">
+        <option value="To Do" {% if task.status == 'To Do' %}selected{% endif %}>To Do</option>
+        <option value="Ongoing" {% if task.status == 'Ongoing' %}selected{% endif %}>Ongoing</option>
+        <option value="Done" {% if task.status == 'Done' %}selected{% endif %}>Done</option>
+    </select>
+    <button type="submit">Update</button>
+</form>
+{% endblock %}

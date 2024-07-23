@@ -5,13 +5,16 @@ from flask_login import login_user, current_user, logout_user, login_required
 from datetime import datetime
 from sqlalchemy import or_
 
+# Route for home page
 @app.route("/")
 @app.route("/home")
 @login_required
 def home():
+    # Retrieve tasks authored by or assigned to the current user
     tasks = Task.query.filter(or_(Task.author == current_user, Task.assignees.any(User.id == current_user.id)))
     return render_template('home.html', tasks=tasks)
 
+# Route for user registration
 @app.route("/register", methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
@@ -28,6 +31,7 @@ def register():
         return redirect(url_for('login'))
     return render_template('register.html')
 
+# Route for user login
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
@@ -44,11 +48,13 @@ def login():
             flash('Login Unsuccessful. Please check email and password', 'danger')
     return render_template('login.html')
 
+# Route for user logout
 @app.route("/logout")
 def logout():
     logout_user()
     return redirect(url_for('login'))
 
+# Route for creating a new task
 @app.route("/task/new", methods=['GET', 'POST'])
 @login_required
 def new_task():
@@ -62,6 +68,7 @@ def new_task():
         return redirect(url_for('home'))
     return render_template('create_task.html')
 
+# Route for updating an existing task
 @app.route("/task/<int:task_id>/update", methods=['GET', 'POST'])
 @login_required
 def update_task(task_id):
@@ -77,6 +84,7 @@ def update_task(task_id):
         return redirect(url_for('home'))
     return render_template('update_task.html', task=task)
 
+# Route for deleting a task
 @app.route("/task/<int:task_id>/delete", methods=['POST'])
 @login_required
 def delete_task(task_id):
@@ -88,6 +96,7 @@ def delete_task(task_id):
     flash('Your task has been deleted!', 'success')
     return redirect(url_for('home'))
 
+# Route for updating task status
 @app.route("/task/<int:task_id>/update_status", methods=['POST'])
 @login_required
 def update_task_status(task_id):
